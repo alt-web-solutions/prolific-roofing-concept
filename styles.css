@@ -50,7 +50,11 @@
 
   --image-radius: var(--radius-sm);
   --image-shadow: var(--shadow-md);
-  --image-overlay: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.55));
+  --image-overlay: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.55)
+  );
   --image-aspect-hero: 16 / 10;
   --image-aspect-card: 4 / 3;
 }
@@ -68,8 +72,16 @@ html {
 body {
   margin: 0;
   background:
-    radial-gradient(circle at 10% 35%, rgba(14, 120, 200, 0.05), transparent 20rem),
-    radial-gradient(circle at 98% 80%, rgba(223, 31, 31, 0.045), transparent 24rem),
+    radial-gradient(
+      circle at 10% 35%,
+      rgba(14, 120, 200, 0.05),
+      transparent 20rem
+    ),
+    radial-gradient(
+      circle at 98% 80%,
+      rgba(223, 31, 31, 0.045),
+      transparent 24rem
+    ),
     var(--color-background);
   color: var(--color-text);
   font-family: var(--font-body);
@@ -266,9 +278,10 @@ h3 {
   position: sticky;
   top: 0;
   z-index: 20;
-  background: var(--color-black);
-  color: var(--color-white);
+  background: var(--color-white);
+  color: var(--color-black);
   box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.35);
+  padding: 1rem 0;
 }
 
 .site-header__inner {
@@ -288,15 +301,13 @@ h3 {
 
 .brand-mark {
   display: block;
-  width: clamp(4.9rem, 8vw, 6.2rem);
-  height: clamp(2.7rem, 4.6vw, 3.5rem);
-  overflow: hidden;
+  width: 150px;
 }
 
 .brand-mark img {
   width: 100%;
-  max-width: none;
-  transform: translateY(-4%);
+  height: auto;
+  display: block;
 }
 
 .brand-wordmark {
@@ -365,12 +376,20 @@ h3 {
 
 .hero__texture,
 .benefits,
-.contact-cta,
-.site-footer {
+.contact-cta {
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.04) 25%, transparent 25%) 0 0 / 1.35rem 1.35rem,
-    radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.08), transparent 16rem),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.04) 25%, transparent 25%) 0
+      0 / 1.35rem 1.35rem,
+    radial-gradient(
+      circle at 30% 20%,
+      rgba(255, 255, 255, 0.08),
+      transparent 16rem
+    ),
     var(--color-black);
+}
+
+.site-footer {
+  background: var(--color-white);
 }
 
 .hero__texture {
@@ -431,14 +450,6 @@ h3 {
   object-fit: cover;
 }
 
-.hero__image-wrap::before,
-.hero__image-wrap::after {
-  position: absolute;
-  z-index: 2;
-  background: var(--color-white);
-  content: "";
-}
-
 .hero__image-wrap::before {
   top: -5%;
   left: 10%;
@@ -473,15 +484,27 @@ h3 {
 .hero__pattern--yellow {
   right: 7.8rem;
   background:
-    repeating-linear-gradient(45deg, transparent 0 1.4rem, rgba(255, 255, 255, 0.55) 1.5rem 1.65rem),
+    repeating-linear-gradient(
+      45deg,
+      transparent 0 1.4rem,
+      rgba(255, 255, 255, 0.55) 1.5rem 1.65rem
+    ),
     var(--color-accent);
 }
 
 .hero__pattern--red {
   right: -2.4rem;
   background:
-    radial-gradient(circle at 40% 35%, rgba(255, 255, 255, 0.9) 0 0.15rem, transparent 0.18rem),
-    repeating-radial-gradient(circle at 60% 45%, rgba(255, 255, 255, 0.9) 0 0.12rem, transparent 0.14rem 0.65rem),
+    radial-gradient(
+      circle at 40% 35%,
+      rgba(255, 255, 255, 0.9) 0 0.15rem,
+      transparent 0.18rem
+    ),
+    repeating-radial-gradient(
+      circle at 60% 45%,
+      rgba(255, 255, 255, 0.9) 0 0.12rem,
+      transparent 0.14rem 0.65rem
+    ),
     var(--color-primary);
 }
 
@@ -793,16 +816,6 @@ h3 {
   color: var(--color-white);
 }
 
-.contact-cta::before,
-.contact-cta::after {
-  position: absolute;
-  width: 4rem;
-  height: 100%;
-  background: var(--color-white);
-  transform: skewX(-18deg);
-  content: "";
-}
-
 .contact-cta::before {
   top: 0;
   left: -2rem;
@@ -865,7 +878,7 @@ h3 {
 
 .site-footer {
   padding-block: var(--space-2xl) var(--space-md);
-  color: var(--color-white);
+  color: var(--color-black);
 }
 
 .site-footer__grid {
@@ -894,11 +907,11 @@ h3 {
 .site-footer a,
 .site-footer li,
 .site-footer__bottom {
-  color: rgba(255, 255, 255, 0.72);
+  color: var(--color-black);
 }
 
 .site-footer a:hover {
-  color: var(--color-white);
+  color: var(--color-primary);
 }
 
 .site-footer__contact li {
@@ -908,7 +921,7 @@ h3 {
 }
 
 .site-footer__contact .material-symbols-outlined {
-  color: var(--color-white);
+  color: var(--color-black);
   font-size: 1rem;
 }
 
